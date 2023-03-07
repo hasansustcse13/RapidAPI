@@ -8,5 +8,7 @@ namespace BizFrameWork
     {
         int SaveChanges();
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken));
+        int SaveChangesWithTransaction();
+        Task<int> SaveChangesWithTransactionChangesAsync(CancellationToken cancellationToken = default(CancellationToken));
     }
 }

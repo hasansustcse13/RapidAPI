@@ -1,10 +1,11 @@
 ﻿using AUTH.Biz.DataModels;
 using AUTH.Biz.DbModelMapping;
+using BizFrameWork;
 using Microsoft.EntityFrameworkCore;
 
 namespace AUTH.Biz.DBContext
 {
-    public class AuthDbContext : DbContext, IAuthDBContext
+    public class AuthDbContext : DbContextBase, IAuthDBContext
     {
         public AuthDbContext(DbContextOptions<AuthDbContext> options) : base(options) { }
 
