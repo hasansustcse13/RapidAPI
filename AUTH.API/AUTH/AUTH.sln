@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AUTH.API", "AUTH.API\AUTH.API.csproj", "{047592DE-7FBE-4509-B22B-FBFE6D197CB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AUTH.API", "AUTH.API\AUTH.API.csproj", "{047592DE-7FBE-4509-B22B-FBFE6D197CB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AUTH.Biz", "AUTH.Biz\AUTH.Biz.csproj", "{88ADBBF0-3CAB-4D1E-8A3C-207DA0E54958}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AUTH.Biz", "AUTH.Biz\AUTH.Biz.csproj", "{88ADBBF0-3CAB-4D1E-8A3C-207DA0E54958}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BizFrameWork", "BizFrameWork\BizFrameWork.csproj", "{362F1BB2-61A7-4C7C-AA3C-12EA013CA764}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{88ADBBF0-3CAB-4D1E-8A3C-207DA0E54958}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88ADBBF0-3CAB-4D1E-8A3C-207DA0E54958}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88ADBBF0-3CAB-4D1E-8A3C-207DA0E54958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{362F1BB2-61A7-4C7C-AA3C-12EA013CA764}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{362F1BB2-61A7-4C7C-AA3C-12EA013CA764}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{362F1BB2-61A7-4C7C-AA3C-12EA013CA764}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{362F1BB2-61A7-4C7C-AA3C-12EA013CA764}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,15 +1,14 @@
+using AUTH.API.Infrastructure;
+using AUTH.Biz.BizEntities;
+using AUTH.Biz.DBContext;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AUTH.API
 {
@@ -25,6 +24,19 @@ namespace AUTH.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddAutoMapper(typeof(MappingProfile).Assembly);
+
+            services.AddDbContextPool<IAuthDBContext, AuthDbContext>(
+               options => options.UseSqlServer(Configuration.GetConnectionString("AuthDbContext")));
+
+            services.AddScoped<IAuthBizContext, AuthBizContext>(
+                provider => AuthBizContext.Create(
+                    provider.GetService<IAuthDBContext>(),
+                    1,
+                    provider.GetRequiredService<IHttpContextAccessor>().HttpContext.Connection.RemoteIpAddress.ToString()
+                   ));
+
             services.AddControllers();
         }
 
